@@ -1,7 +1,7 @@
 <?php
 
 //テンプレートを取得
-$template = file_get_contents('../template/hasumin.php');
+$template = file_get_contents('../template/hasumin.html');
 
 //templateから取得したい部分{{}}の正規表現
 $pattern = '/{{\s*(\w*)\s*}}/';
