@@ -16,7 +16,7 @@ $requestUri = strtok($requestUri, '?');
 $route = new Route();
 
 //ルーティング先の決定
-include '../route/route.php';
+require '../route/route.php';
 $controllerName = $route->controllerName;
 $controller = new $controllerName();
 
