@@ -2,11 +2,12 @@
 
 abstract class BaseController {
 
+    //描画するhtmlを格納するプロパティ
+    public $html = '';
+
     //route.phpからコントローラにアクセスするための抽象メソッド
     abstract protected function action();
 
-    //描画するhtmlを格納するプロパティ
-    public $html = '';
     /**
      * templateを取得するメソッド
      *
@@ -53,7 +54,11 @@ abstract class BaseController {
         return $template;
     }
 
-    //htmlを返すメソッド
+    /**
+     * htmlプロパティに値を格納するメソッド
+     *
+     * @param $html string
+     */
     protected function display($html) {
         $this->html = $html;
     }
