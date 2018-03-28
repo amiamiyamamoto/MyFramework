@@ -1,10 +1,10 @@
 <?php
 class HasuminController extends BaseController {
     public function action() {
-        echo "はすみん";
-    }
-
-    protected function getTemplate() {
-        return;
+        //テンプレート取得
+        $template = $this->getTemplate('hasumin.html');
+        
+        //画面に表示
+        $this->display($template);
     }
 }

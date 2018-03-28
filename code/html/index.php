@@ -23,3 +23,5 @@ $controller = new $controllerName();
 //controllerの呼び出し
 $controller->action();
 
+//描画する(指定がない場合は空文字を描画)
+echo $controller->html;
