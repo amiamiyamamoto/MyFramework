@@ -7,6 +7,6 @@ class ObaController extends BaseController
         //タグの置換
         $html = $this->replaceTags($template);
         //画面に表示
-        $this->display($html);
+        $this->displayHtml($html);
     }
 }

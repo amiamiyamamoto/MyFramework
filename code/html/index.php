@@ -24,4 +24,6 @@ $controller = new $controllerName();
 $controller->action();
 
 //描画する(指定がない場合は空文字を描画)
+//header("HTTP/1.0 404 Not Found");
+http_response_code($controller->statusCode);
 echo $controller->html;

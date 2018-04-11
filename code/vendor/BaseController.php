@@ -4,6 +4,7 @@ abstract class BaseController {
 
     //描画するhtmlを格納するプロパティ
     public $html = '';
+    public $statusCode = '200';
 
     //route.phpからコントローラにアクセスするための抽象メソッド
     abstract protected function action();
@@ -59,7 +60,11 @@ abstract class BaseController {
      *
      * @param $html string
      */
-    protected function display($html) {
+    protected function displayHtml($html) {
         $this->html = $html;
+    }
+
+    protected function setStatusCode($statusCode) {
+        $this->statusCode = $statusCode;
     }
 }

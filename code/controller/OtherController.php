@@ -2,6 +2,7 @@
 
 class OtherController extends BaseController {
     public function action() {
-        echo "404";
+        $this->setStatusCode('404');
+        $this->displayHtml('404');        
     }
 }

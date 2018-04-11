@@ -5,6 +5,6 @@ class HasuminController extends BaseController {
         $template = $this->getTemplate('hasumin.html');
         
         //画面に表示
-        $this->display($template);
+        $this->displayHtml($template);
     }
 }
