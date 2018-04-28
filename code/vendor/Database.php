@@ -12,9 +12,9 @@ class Database
     private $commitFlag = true;
 
     private function __construct() {
-        $dbName = $this->getDbName();
-        $userName = $this->getUserName();
-        $password = $this->getPassword();
+        $dbName   = $this->getParameterFromEnv('DB_DATABASE');
+        $userName = $this->getParameterFromEnv('DB_USERNAME'); 
+        $password = $this->getParameterFromEnv('DB_PASSWORD');
 
         self::$pdo = new PDO('mysql:dbname='.$dbName.';host=mysql;port=3306', $userName, $password);
         self::$db = new Database();
@@ -42,21 +42,11 @@ class Database
         return $this->commitFlag;
     }
 
-
-    private function getDbName() {
-        return $this->getParameterByEnv('/DB_DATABASE=(\w*)\n/');
-    }
-    private function getUserName() {
-        return $this->getParameterByEnv('/DB_USERNAME=(\w*)\n/');
-    }
-    private function getPassword() {
-        return $this->getParameterByEnv('/DB_PASSWORD=(\w*)\n/');
-    }
-
-    private function getParameterByEnv($regex) {
+    private function getParameterFromEnv($parameter) {
         //.envファイルを取得
         $env = file_get_contents('../.env');
-
+        //正規表現
+        $regex = '/'.$parameter.'=(\w*)\n/';
         //envから取りだす
         preg_match_all($regex, $env, $matches);
 
