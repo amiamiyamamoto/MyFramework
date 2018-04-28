@@ -30,11 +30,12 @@ $controller->action();
 
 //commitもしくはROLLBACK
 $db->commit();
+//$db->rollBack();
 
 //ステータスコードを送る（controllerで指定がない場合は200）
-http_response_code($controller->statusCode);
+http_response_code($controller->getStatusCode());
 //描画する(指定がない場合は空文字を描画)
-echo $controller->html;
+echo $controller->getHtml();
 
 //phpinfo();
 //$db = new PDO('mysql:dbname=myFramework;host=mysql;port=3306', "root", "password");
