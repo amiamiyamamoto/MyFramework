@@ -17,7 +17,6 @@ class Database
         $password = $this->getParameterFromEnv('DB_PASSWORD');
 
         self::$pdo = new PDO('mysql:dbname='.$dbName.';host=mysql;port=3306', $userName, $password);
-        self::$db = new Database();
     }
 
     //PDOでデータベースに接続するメソッド
