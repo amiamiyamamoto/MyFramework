@@ -1,5 +1,6 @@
 <?php
 require_once '../vendor/BaseController.php';
+require_once '../vendor/DbConnectController.php';
 require_once '../vendor/route.php';
 require_once '../vendor/Database.php';
 
@@ -22,14 +23,14 @@ $controllerName = $route->controllerName;
 $controller = new $controllerName();
 
 //Databaseシングルトンの呼び出し、トランザクションを開始
-$db = Database::getPdo();
-$db->beginTransaction();
+//$db = Database::getPdo();
+//$db->beginTransaction();
 
 //controllerの呼び出し
 $controller->action();
 
 //commitもしくはROLLBACK
-$db->commit();
+//$db->commit();
 //$db->rollBack();
 
 //ステータスコードを送る（controllerで指定がない場合は200）
