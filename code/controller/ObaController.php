@@ -8,7 +8,8 @@ class ObaController extends BaseController
         $html = $this->replaceTags($template);
         //userテーブルにインサート
         $db = Database::getPdo();
-        $db->prepare("insert into users (name,age) values ('oba', 60)")->execute();
+        //$db->prepare("insert into users (name,age) values ('oba', 60)")->execute();
+
         //画面に表示
         $this->displayHtml($html);
     }
