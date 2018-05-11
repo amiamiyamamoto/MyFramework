@@ -15,8 +15,7 @@ abstract class DbConnectController extends BaseController {
             if (! $this->pdo->beginTransaction()) throw new Exception();
             $this->dbAction();
             $this->pdo->commit();
-            echo "どうしたらキャッチにいくの";
-        } catch (PDOException $e) {
+        } catch (Exception $e) {
             $this->pdo->rollBack();
             echo $e;
         }
