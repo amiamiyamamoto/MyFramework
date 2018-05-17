@@ -1,8 +1,9 @@
 <?php
+//phpinfo();
 require_once '../vendor/BaseController.php';
 require_once '../vendor/DbConnectController.php';
 require_once '../vendor/route.php';
-require_once '../vendor/Database.php';
+require_once '../vendor/DB.php';
 
 //../controller/内のcontrollerファイルを読み込む
 foreach (glob("../controller/*Controller.php") as $fileName) {

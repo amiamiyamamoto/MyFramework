@@ -15,12 +15,13 @@ services:
       volumes:
         - ./code:/var/www/
   mysql:
-    restart: always
-    image: mysql:latest
+      #restart: always
+    image: mysql:5.7
+    #image: mysql
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=test
+      - MYSQL_DATABASE=myFramework
     ports:
       - 3306:3306

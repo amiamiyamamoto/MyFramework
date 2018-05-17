@@ -3,7 +3,7 @@
 class Route
 {
     //Controller名を格納する
-    public $controllerName = 'OtherController';
+    private $controllerName = 'OtherController';
 
     /**
      * ルーティング先のコントローラ名を
@@ -17,5 +17,9 @@ class Route
         if ($uri == $requestUri) {
             $this->controllerName = $controllerName;
         } 
+     }
+
+    public function getControllerName() {
+        return $this->controllerName;
     }
 }
