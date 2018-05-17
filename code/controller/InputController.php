@@ -1,5 +1,6 @@
 <?php
 class InputController extends BaseController{
+    use Validation;
     public function action() {
         //テンプレート取得
         $template = $this->getTemplate('input.html');

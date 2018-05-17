@@ -4,6 +4,7 @@ require_once '../vendor/BaseController.php';
 require_once '../vendor/DbConnectController.php';
 require_once '../vendor/route.php';
 require_once '../vendor/DB.php';
+require_once '../vendor/ValidationTrait.php';
 
 //../controller/内のcontrollerファイルを読み込む
 foreach (glob("../controller/*Controller.php") as $fileName) {
